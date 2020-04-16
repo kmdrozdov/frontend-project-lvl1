@@ -7,6 +7,10 @@
 ## Пример работы игры *brain-calc*
 [![asciicast](https://asciinema.org/a/OhhowZC2UWYV0Z4TAdCrI4DK8.svg)](https://asciinema.org/a/OhhowZC2UWYV0Z4TAdCrI4DK8)
 
+## Пример работы игры *brain-gcd*
+
+[![asciicast](https://asciinema.org/a/xlqdm35B63EaVFrgtvPKNiN3c.svg)](https://asciinema.org/a/xlqdm35B63EaVFrgtvPKNiN3c)
+
 ![](https://github.com/kmdrozdov/frontend-project-lvl1/workflows/CI/badge.svg)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
