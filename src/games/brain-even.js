@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import core from './core.js';
-import getRandomInt from '../getRandomInt.js';
+import getRandomInt from '../common/getRandomInt.js';
 
 const playRound = (userName) => {
   const randomNumber = getRandomInt(100);

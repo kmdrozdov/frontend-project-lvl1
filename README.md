@@ -11,6 +11,10 @@
 
 [![asciicast](https://asciinema.org/a/xlqdm35B63EaVFrgtvPKNiN3c.svg)](https://asciinema.org/a/xlqdm35B63EaVFrgtvPKNiN3c)
 
+## Пример работы игры *brain-progression*
+
+[![asciicast](https://asciinema.org/a/GjwFtK9V1UYlJ5dZzFwQDSrjx.svg)](https://asciinema.org/a/GjwFtK9V1UYlJ5dZzFwQDSrjx)
+
 ![](https://github.com/kmdrozdov/frontend-project-lvl1/workflows/CI/badge.svg)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)

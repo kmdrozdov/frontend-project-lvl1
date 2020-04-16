@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import core from './core.js';
-import getRandomInt from '../getRandomInt.js';
-import getGcd from '../getGcd.js';
+import getRandomInt from '../common/getRandomInt.js';
+import getGcd from '../common/getGcd.js';
 
 const playRound = (userName) => {
   const randomNumber1 = getRandomInt(100);
