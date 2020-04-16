@@ -3,9 +3,11 @@ import core from './core.js';
 import getRandomInt from '../common/getRandomInt.js';
 import getGcd from '../common/getGcd.js';
 
+const MAX_NUMBER = 100;
+
 const playRound = (userName) => {
-  const randomNumber1 = getRandomInt(100);
-  const randomNumber2 = getRandomInt(100);
+  const randomNumber1 = getRandomInt(MAX_NUMBER);
+  const randomNumber2 = getRandomInt(MAX_NUMBER);
 
   console.log(`Question: ${randomNumber1} ${randomNumber2}`);
   const userAnswer = readlineSync.question('Your answer: ');

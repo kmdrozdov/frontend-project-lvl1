@@ -2,8 +2,10 @@ import readlineSync from 'readline-sync';
 import core from './core.js';
 import getRandomInt from '../common/getRandomInt.js';
 
+const MAX_NUMBER = 100;
+
 const playRound = (userName) => {
-  const randomNumber = getRandomInt(100);
+  const randomNumber = getRandomInt(MAX_NUMBER);
   const isEven = randomNumber % 2 === 0 ? 'yes' : 'no';
 
   console.log(`Question: ${randomNumber}`);

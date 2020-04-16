@@ -3,8 +3,10 @@ import core from './core.js';
 import getRandomInt from '../common/getRandomInt.js';
 import isPrime from '../common/isPrime.js';
 
+const MAX_NUMBER = 100;
+
 const playRound = (userName) => {
-  const randomNumber = getRandomInt(100);
+  const randomNumber = getRandomInt(MAX_NUMBER);
   const isPrimeNum = isPrime(randomNumber) ? 'yes' : 'no';
 
   console.log(`Question: ${randomNumber}`);

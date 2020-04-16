@@ -2,7 +2,8 @@ import readlineSync from 'readline-sync';
 import core from './core.js';
 import getRandomInt from '../common/getRandomInt.js';
 
-const mathOperations = ['+', '-', '*'];
+const MATH_OPERATIONS = ['+', '-', '*'];
+const MAX_NUMBER = 25;
 
 const getResult = (num1, num2, operator) => {
   if (operator === '+') {
@@ -17,9 +18,9 @@ const getResult = (num1, num2, operator) => {
 };
 
 const playRound = (userName) => {
-  const randomNumber1 = getRandomInt(25);
-  const randomNumber2 = getRandomInt(25);
-  const randomOperation = mathOperations[getRandomInt(3)];
+  const randomNumber1 = getRandomInt(MAX_NUMBER);
+  const randomNumber2 = getRandomInt(MAX_NUMBER);
+  const randomOperation = MATH_OPERATIONS[getRandomInt(MATH_OPERATIONS.length)];
 
   console.log(`Question: ${randomNumber1} ${randomOperation} ${randomNumber2}`);
   const userAnswer = readlineSync.question('Your answer: ');
