@@ -1,9 +1,22 @@
 import readlineSync from 'readline-sync';
 import core from './core.js';
 import getRandomInt from '../common/getRandomInt.js';
-import isPrime from '../common/isPrime.js';
 
 const MAX_NUMBER = 100;
+
+const isPrime = (num) => {
+  if (num <= 1) {
+    return false;
+  }
+
+  for (let i = 2; i < num / 2; i += 1) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+};
 
 const playRound = (userName) => {
   const randomNumber = getRandomInt(MAX_NUMBER);

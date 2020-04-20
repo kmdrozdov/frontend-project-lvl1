@@ -1,9 +1,28 @@
 import readlineSync from 'readline-sync';
 import core from './core.js';
 import getRandomInt from '../common/getRandomInt.js';
-import getGcd from '../common/getGcd.js';
 
 const MAX_NUMBER = 100;
+
+const getGcd = (a, b) => {
+  let res = a;
+  let counter = b;
+  let raw;
+
+  if (a < b) {
+    raw = res;
+    res = counter;
+    counter = raw;
+  }
+
+  while (counter !== 0) {
+    raw = counter;
+    counter = res % counter;
+    res = raw;
+  }
+
+  return res;
+};
 
 const playRound = (userName) => {
   const randomNumber1 = getRandomInt(MAX_NUMBER);
