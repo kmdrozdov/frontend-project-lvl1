@@ -4,10 +4,6 @@ env:
 extends:
   - 'airbnb-base'
 
-parserOptions:
-  ecmaVersion: 2018
-  sourceType: module
-
 rules:
   no-console: 0
   import/extensions: 0
