@@ -6,19 +6,19 @@
 
 ## Пример установки и работы игры *brain-even*
 
-[![asciicast](https://asciinema.org/a/ZC89De97rmfNx20bAGLBRLNDk.svg)](https://asciinema.org/a/ZC89De97rmfNx20bAGLBRLNDk)
+[![asciicast](https://asciinema.org/a/3g2EIkkd3jgaLv4oj986Obxun.svg)](https://asciinema.org/a/3g2EIkkd3jgaLv4oj986Obxun)
 
 ## Пример работы игры *brain-calc*
-[![asciicast](https://asciinema.org/a/OhhowZC2UWYV0Z4TAdCrI4DK8.svg)](https://asciinema.org/a/OhhowZC2UWYV0Z4TAdCrI4DK8)
+[![asciicast](https://asciinema.org/a/DAGCnDdgfhg83VTUrlb0XCCUL.svg)](https://asciinema.org/a/DAGCnDdgfhg83VTUrlb0XCCUL)
 
 ## Пример работы игры *brain-gcd*
 
-[![asciicast](https://asciinema.org/a/xlqdm35B63EaVFrgtvPKNiN3c.svg)](https://asciinema.org/a/xlqdm35B63EaVFrgtvPKNiN3c)
+[![asciicast](https://asciinema.org/a/2IJ6VeqdDCoRChz6xjPSQwQ2M.svg)](https://asciinema.org/a/2IJ6VeqdDCoRChz6xjPSQwQ2M)
 
 ## Пример работы игры *brain-progression*
 
-[![asciicast](https://asciinema.org/a/GjwFtK9V1UYlJ5dZzFwQDSrjx.svg)](https://asciinema.org/a/GjwFtK9V1UYlJ5dZzFwQDSrjx)
+[![asciicast](https://asciinema.org/a/acWM3XPuytnkwS6XniVPMGyRW.svg)](https://asciinema.org/a/acWM3XPuytnkwS6XniVPMGyRW)
 
 ## Пример работы игры *brain-prime*
 
-[![asciicast](https://asciinema.org/a/c5EzPxAQ1LmuIwZuMNhehAhpn.svg)](https://asciinema.org/a/c5EzPxAQ1LmuIwZuMNhehAhpn)
+[![asciicast](https://asciinema.org/a/uafDxMQWRePeHqzaSta9CBnZf.svg)](https://asciinema.org/a/uafDxMQWRePeHqzaSta9CBnZf)
