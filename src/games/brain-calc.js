@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import core from './core.js';
+import gameEngine from '../index.js';
 import getRandomInt from '../common/getRandomInt.js';
 
 const MATH_OPERATIONS = ['+', '-', '*'];
@@ -17,23 +16,18 @@ const getResult = (num1, num2, operator) => {
   return num1 * num2;
 };
 
-const playRound = (userName) => {
+const playRound = () => {
   const randomNumber1 = getRandomInt(MAX_NUMBER);
   const randomNumber2 = getRandomInt(MAX_NUMBER);
   const randomOperation = MATH_OPERATIONS[getRandomInt(MATH_OPERATIONS.length)];
 
-  console.log(`Question: ${randomNumber1} ${randomOperation} ${randomNumber2}`);
-  const userAnswer = readlineSync.question('Your answer: ');
+  const question = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
   const result = getResult(randomNumber1, randomNumber2, randomOperation);
 
-  if (userAnswer !== String(result)) {
-    console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".`);
-    console.log(`Let's try again, ${userName}!`);
-
-    return false;
-  }
-
-  return true;
+  return {
+    question,
+    result,
+  };
 };
 
-export default (userName) => core('What is the result of the expression?', playRound, userName);
+export default () => gameEngine('What is the result of the expression?', playRound);

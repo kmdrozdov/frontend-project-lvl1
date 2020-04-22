@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import core from './core.js';
+import gameEngine from '../index.js';
 import getRandomInt from '../common/getRandomInt.js';
 
 const PROGR_LENGTH = 10;
@@ -16,7 +15,7 @@ const getProgression = () => {
   return result;
 };
 
-const playRound = (userName) => {
+const playRound = () => {
   const progression = getProgression();
   const randomIndex = getRandomInt(progression.length);
   let result = '';
@@ -30,17 +29,12 @@ const playRound = (userName) => {
     return item;
   });
 
-  console.log(`Question: ${forQuestion.join(' ')}`);
-  const userAnswer = readlineSync.question('Your answer: ');
+  const question = forQuestion.join(' ');
 
-  if (userAnswer !== String(result)) {
-    console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}".`);
-    console.log(`Let's try again, ${userName}!`);
-
-    return false;
-  }
-
-  return true;
+  return {
+    question,
+    result,
+  };
 };
 
-export default (userName) => core('What number is missing in the progression?', playRound, userName);
+export default () => gameEngine('What number is missing in the progression?', playRound);
