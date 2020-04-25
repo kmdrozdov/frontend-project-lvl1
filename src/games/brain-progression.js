@@ -1,40 +1,35 @@
 import gameEngine from '../index.js';
-import getRandomInt from '../common/getRandomInt.js';
+import getRandomInt from '../utils/getRandomInt.js';
 
-const PROGR_LENGTH = 10;
-const PROGR_STEP = 2;
-const MAX_NUMBER = 15;
+const PROGRESSION_LENGTH = 10;
+const MAX = 15;
+const MIN = 10;
+const STEP = 2;
+
+const gameRules = 'What number is missing in the progression?';
 
 const getProgression = () => {
   const result = [];
 
-  for (let i = 0, start = getRandomInt(MAX_NUMBER); i < PROGR_LENGTH; i += 1, start += PROGR_STEP) {
+  for (let i = 0, start = getRandomInt(MIN, MAX); i < PROGRESSION_LENGTH; i += 1, start += STEP) {
     result.push(start);
   }
 
   return result;
 };
 
-const playRound = () => {
+const getRoundData = () => {
   const progression = getProgression();
-  const randomIndex = getRandomInt(progression.length);
-  let result = '';
+  const chosenIndex = getRandomInt(0, progression.length);
+  const answer = String(progression[chosenIndex]);
 
-  const forQuestion = getProgression().map((item, index) => {
-    if (index === randomIndex) {
-      result = item;
-      return '..';
-    }
-
-    return item;
-  });
-
-  const question = forQuestion.join(' ');
+  progression[chosenIndex] = '..';
+  const question = progression.join(' ');
 
   return {
     question,
-    result,
+    answer,
   };
 };
 
-export default () => gameEngine('What number is missing in the progression?', playRound);
+export default () => gameEngine(gameRules, getRoundData);

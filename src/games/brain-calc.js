@@ -1,33 +1,43 @@
 import gameEngine from '../index.js';
-import getRandomInt from '../common/getRandomInt.js';
+import getRandomInt from '../utils/getRandomInt.js';
 
 const MATH_OPERATIONS = ['+', '-', '*'];
-const MAX_NUMBER = 25;
+const MAX = 15;
+const MIN = 5;
 
-const getResult = (num1, num2, operator) => {
-  if (operator === '+') {
-    return num1 + num2;
+const gameRules = 'What is the result of the expression?';
+
+const getCalculation = (num1, num2, operator) => {
+  let res;
+
+  switch (operator) {
+    case '+':
+      res = num1 + num2;
+      break;
+    case '-':
+      res = num1 - num2;
+      break;
+    default:
+      res = num1 * num2;
   }
 
-  if (operator === '-') {
-    return num1 - num2;
-  }
-
-  return num1 * num2;
+  return res;
 };
 
-const playRound = () => {
-  const randomNumber1 = getRandomInt(MAX_NUMBER);
-  const randomNumber2 = getRandomInt(MAX_NUMBER);
-  const randomOperation = MATH_OPERATIONS[getRandomInt(MATH_OPERATIONS.length)];
+const getRoundData = () => {
+  const num1 = getRandomInt(MIN, MAX);
+  const num2 = getRandomInt(MIN, MAX);
 
-  const question = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
-  const result = getResult(randomNumber1, randomNumber2, randomOperation);
+  const chosenIndex = getRandomInt(0, MATH_OPERATIONS.length);
+  const operation = MATH_OPERATIONS[chosenIndex];
+
+  const question = `${num1} ${operation} ${num2}`;
+  const answer = String(getCalculation(num1, num2, operation));
 
   return {
     question,
-    result,
+    answer,
   };
 };
 
-export default () => gameEngine('What is the result of the expression?', playRound);
+export default () => gameEngine(gameRules, getRoundData);

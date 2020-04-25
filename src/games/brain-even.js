@@ -1,16 +1,21 @@
 import gameEngine from '../index.js';
-import getRandomInt from '../common/getRandomInt.js';
+import getRandomInt from '../utils/getRandomInt.js';
 
-const MAX_NUMBER = 100;
+const MIN = 10;
+const MAX = 50;
 
-const playRound = () => {
-  const question = getRandomInt(MAX_NUMBER);
-  const result = question % 2 === 0 ? 'yes' : 'no';
+const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isEven = (num) => num % 2 === 0;
+
+const getRoundData = () => {
+  const question = getRandomInt(MIN, MAX);
+  const answer = isEven(question) ? 'yes' : 'no';
 
   return {
     question,
-    result,
+    answer,
   };
 };
 
-export default () => gameEngine('Answer "yes" if the number is even, otherwise answer "no".', playRound);
+export default () => gameEngine(gameRules, getRoundData);

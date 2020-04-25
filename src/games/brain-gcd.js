@@ -1,39 +1,36 @@
 import gameEngine from '../index.js';
-import getRandomInt from '../common/getRandomInt.js';
+import getRandomInt from '../utils/getRandomInt.js';
 
-const MAX_NUMBER = 100;
+const MAX = 100;
+const MIN = 10;
 
-const getGcd = (a, b) => {
-  let res = a;
-  let counter = b;
-  let raw;
+const gameRules = 'Find the greatest common divisor of given numbers.';
 
-  if (a < b) {
-    raw = res;
-    res = counter;
-    counter = raw;
+const getGcd = (num1, num2) => {
+  let dividend = Math.max(num1, num2);
+  let divisor = Math.min(num1, num2);
+  let modulo = divisor;
+
+  while (modulo !== 0) {
+    divisor = modulo;
+    modulo = dividend % divisor;
+    dividend = divisor;
   }
 
-  while (counter !== 0) {
-    raw = counter;
-    counter = res % counter;
-    res = raw;
-  }
-
-  return res;
+  return divisor;
 };
 
-const playRound = () => {
-  const randomNumber1 = getRandomInt(MAX_NUMBER);
-  const randomNumber2 = getRandomInt(MAX_NUMBER);
+const getRoundData = () => {
+  const num1 = getRandomInt(MIN, MAX);
+  const num2 = getRandomInt(MIN, MAX);
 
-  const question = `${randomNumber1} ${randomNumber2}`;
-  const result = getGcd(randomNumber1, randomNumber2);
+  const question = `${num1} ${num2}`;
+  const answer = String(getGcd(num1, num2));
 
   return {
     question,
-    result,
+    answer,
   };
 };
 
-export default () => gameEngine('Find the greatest common divisor of given numbers.', playRound);
+export default () => gameEngine(gameRules, getRoundData);

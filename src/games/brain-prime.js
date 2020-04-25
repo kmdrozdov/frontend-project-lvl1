@@ -1,14 +1,17 @@
 import gameEngine from '../index.js';
-import getRandomInt from '../common/getRandomInt.js';
+import getRandomInt from '../utils/getRandomInt.js';
 
-const MAX_NUMBER = 100;
+const MAX = 100;
+const MIN = 1;
+
+const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num <= 1) {
     return false;
   }
 
-  for (let i = 2; i < num / 2; i += 1) {
+  for (let i = 2; i <= num / 2; i += 1) {
     if (num % i === 0) {
       return false;
     }
@@ -17,14 +20,14 @@ const isPrime = (num) => {
   return true;
 };
 
-const playRound = () => {
-  const question = getRandomInt(MAX_NUMBER);
-  const result = isPrime(question) ? 'yes' : 'no';
+const getRoundData = () => {
+  const question = getRandomInt(MIN, MAX);
+  const answer = isPrime(question) ? 'yes' : 'no';
 
   return {
     question,
-    result,
+    answer,
   };
 };
 
-export default () => gameEngine('Answer "yes" if given number is prime. Otherwise answer "no".', playRound);
+export default () => gameEngine(gameRules, getRoundData);
