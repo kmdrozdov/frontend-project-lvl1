@@ -5,31 +5,27 @@ const MATH_OPERATIONS = ['+', '-', '*'];
 const MAX = 15;
 const MIN = 5;
 
-const gameRules = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 
 const getCalculation = (num1, num2, operator) => {
-  let res;
-
   switch (operator) {
     case '+':
-      res = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      res = num1 - num2;
-      break;
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
     default:
-      res = num1 * num2;
+      throw new Error(`Unknown operator: ${operator}`);
   }
-
-  return res;
 };
 
 const getRoundData = () => {
   const num1 = getRandomInt(MIN, MAX);
   const num2 = getRandomInt(MIN, MAX);
 
-  const chosenIndex = getRandomInt(0, MATH_OPERATIONS.length);
-  const operation = MATH_OPERATIONS[chosenIndex];
+  const operationIndex = getRandomInt(0, MATH_OPERATIONS.length - 1);
+  const operation = MATH_OPERATIONS[operationIndex];
 
   const question = `${num1} ${operation} ${num2}`;
   const answer = String(getCalculation(num1, num2, operation));
@@ -40,4 +36,4 @@ const getRoundData = () => {
   };
 };
 
-export default () => gameEngine(gameRules, getRoundData);
+export default () => gameEngine(gameDescription, getRoundData);

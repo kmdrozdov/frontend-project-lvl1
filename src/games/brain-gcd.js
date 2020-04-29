@@ -4,16 +4,16 @@ import getRandomInt from '../utils/getRandomInt.js';
 const MAX = 100;
 const MIN = 10;
 
-const gameRules = 'Find the greatest common divisor of given numbers.';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (num1, num2) => {
   let dividend = Math.max(num1, num2);
   let divisor = Math.min(num1, num2);
-  let modulo = divisor;
+  let remainder = divisor;
 
-  while (modulo !== 0) {
-    divisor = modulo;
-    modulo = dividend % divisor;
+  while (remainder !== 0) {
+    divisor = remainder;
+    remainder = dividend % divisor;
     dividend = divisor;
   }
 
@@ -33,4 +33,4 @@ const getRoundData = () => {
   };
 };
 
-export default () => gameEngine(gameRules, getRoundData);
+export default () => gameEngine(gameDescription, getRoundData);

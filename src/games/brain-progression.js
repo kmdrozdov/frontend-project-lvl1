@@ -4,26 +4,28 @@ import getRandomInt from '../utils/getRandomInt.js';
 const PROGRESSION_LENGTH = 10;
 const MAX = 15;
 const MIN = 10;
-const STEP = 2;
 
-const gameRules = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in the progression?';
 
-const getProgression = () => {
+const generateProgression = (firstMember, step, length) => {
+  let member = firstMember;
   const result = [];
 
-  for (let i = 0, start = getRandomInt(MIN, MAX); i < PROGRESSION_LENGTH; i += 1, start += STEP) {
-    result.push(start);
+  for (let i = 0; i < length; i += 1, member += step) {
+    result.push(member);
   }
 
   return result;
 };
 
 const getRoundData = () => {
-  const progression = getProgression();
-  const chosenIndex = getRandomInt(0, progression.length);
-  const answer = String(progression[chosenIndex]);
+  const firstMember = getRandomInt(MIN, MAX);
+  const step = getRandomInt(1, 5);
+  const progression = generateProgression(firstMember, step, PROGRESSION_LENGTH);
+  const hiddenMemberIndex = getRandomInt(0, progression.length - 1);
+  const answer = String(progression[hiddenMemberIndex]);
 
-  progression[chosenIndex] = '..';
+  progression[hiddenMemberIndex] = '..';
   const question = progression.join(' ');
 
   return {
@@ -32,4 +34,4 @@ const getRoundData = () => {
   };
 };
 
-export default () => gameEngine(gameRules, getRoundData);
+export default () => gameEngine(gameDescription, getRoundData);

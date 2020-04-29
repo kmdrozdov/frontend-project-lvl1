@@ -4,7 +4,7 @@ import getRandomInt from '../utils/getRandomInt.js';
 const MAX = 100;
 const MIN = 1;
 
-const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num <= 1) {
@@ -25,9 +25,9 @@ const getRoundData = () => {
   const answer = isPrime(question) ? 'yes' : 'no';
 
   return {
-    question,
+    question: String(question),
     answer,
   };
 };
 
-export default () => gameEngine(gameRules, getRoundData);
+export default () => gameEngine(gameDescription, getRoundData);
