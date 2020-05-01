@@ -1,4 +1,4 @@
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 import getRandomInt from '../utils/getRandomInt.js';
 
 const PROGRESSION_LENGTH = 10;
@@ -8,14 +8,13 @@ const MIN = 10;
 const gameDescription = 'What number is missing in the progression?';
 
 const generateProgression = (firstMember, step, length) => {
-  let member = firstMember;
-  const result = [];
+  const progression = [];
 
-  for (let i = 0; i < length; i += 1, member += step) {
-    result.push(member);
+  for (let i = 0, member = firstMember; i < length; i += 1, member += step) {
+    progression.push(member);
   }
 
-  return result;
+  return progression;
 };
 
 const getRoundData = () => {
@@ -34,4 +33,4 @@ const getRoundData = () => {
   };
 };
 
-export default () => gameEngine(gameDescription, getRoundData);
+export default () => runGameEngine(gameDescription, getRoundData);

@@ -1,4 +1,4 @@
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 import getRandomInt from '../utils/getRandomInt.js';
 
 const MAX = 100;
@@ -30,4 +30,4 @@ const getRoundData = () => {
   };
 };
 
-export default () => gameEngine(gameDescription, getRoundData);
+export default () => runGameEngine(gameDescription, getRoundData);
